@@ -10,27 +10,39 @@ class GetStarted extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Color.fromARGB(55, 36, 3, 107),
-      body: Padding(
-        padding: EdgeInsetsGeometry.only(top: 160.h, left: 20.w, right: 0.w),
-        child: Column(
-          children: [
-            Image.asset(Pngsvg.weatherIcon),
-            FirstScreenWidget(text: 'Daily'),
-            FirstScreenWidget(text: 'Weather'),
-            SizedBox(height: 40.h),
-            WriteUp(text: "Get to know your weather"),
-            WriteUp(text: "Maps and radar precipitation"),
-            WriteUp(text: "forecast"),
-            SizedBox(height: 100.h),
-            ElevatedButton(
-              style: ElevatedButton.styleFrom(backgroundColor: Colors.blue),
-              onPressed: () {
-                print("clicked");
-                Navigator.pushNamed(context, "/getStarted_button");
-              },
-              child: Text("Get Started", style: TextStyle(color: Colors.white)),
+      body: Center(
+        child: ConstrainedBox(
+          constraints: BoxConstraints(maxWidth: 430),
+          child: Padding(
+            padding: EdgeInsetsGeometry.only(
+              top: 160.h,
+              left: 20.w,
+              right: 0.w,
             ),
-          ],
+            child: Column(
+              children: [
+                Image.asset(Pngsvg.weatherIcon),
+                FirstScreenWidget(text: 'Daily'),
+                FirstScreenWidget(text: 'Weather'),
+                SizedBox(height: 40.h),
+                WriteUp(text: "Get to know your weather"),
+                WriteUp(text: "Maps and radar precipitation"),
+                WriteUp(text: "forecast"),
+                SizedBox(height: 100.h),
+                ElevatedButton(
+                  style: ElevatedButton.styleFrom(backgroundColor: Colors.blue),
+                  onPressed: () {
+                    print("clicked");
+                    Navigator.pushNamed(context, "/getStarted_button");
+                  },
+                  child: Text(
+                    "Get Started",
+                    style: TextStyle(color: Colors.white),
+                  ),
+                ),
+              ],
+            ),
+          ),
         ),
       ),
     );
