@@ -128,7 +128,7 @@ class _WeatherScreenState extends ConsumerState<WeatherScreen> {
                     color: Colors.white,
                   ),
                 ),
-                SizedBox(height: 20.h),
+                SizedBox(height: 100.h),
                 Center(
                   child: Column(
                     children: [
